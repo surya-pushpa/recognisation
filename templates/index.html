@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="#" />
+    <title>Welcome </title>
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.6/css/mdb.min.css" rel="stylesheet">
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.6/js/mdb.min.js" defer></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+    <script type="text/javascript" src="static/js/imageProcessor.js"></script>
+    <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+</head>
+
+<body>
+    <div class="container" style="width:50%;">
+        <h1>Welcome to We Recognise You</h1>
+        <p>Fill the fields below to start video capturing. Id field should be unique.</p>
+        <div class="form-signin" role="form">
+            <h2 class="form-signin-heading"></h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <input type="name" id="userId" class="form-control" placeholder="Id" required autofocus>
+                </div><br />
+                <div class="col-md-6">
+                    <input type="name" id="userName" class="form-control" placeholder="Name" required>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-12">
+                    <input type="name" id="fileName" class="form-control" placeholder="Input file Name" required>
+                </div>
+            </div>
+            <!-- <input type="password" name="password" class="form-control" placeholder="Password" required> -->
+            <br />
+            <form class="row" enctype="multipart/form-data">
+                <div class="col-md-6">
+                    <button class="btn btn-lg btn-primary btn-block" onclick="startVideoCapturing()" type="button">Start Capturing</button>
+                </div>
+                <div class="col-md-6">
+                    <button class="btn btn-lg btn-primary btn-block" onclick="stopVideoCapturing()" type="button">Stop Capturing</button>
+                </div>                
+            </form><br />
+            <div class="row">
+                <div class="col-md-12">
+                    <video style="display:block;margin: auto;" id="CandidateVC" autoplay></video>
+                </div>
+            </div><br/>
+            <div class="row">
+                <div class="col-md-6">
+                    <button class="btn btn-lg btn-primary btn-block" onclick="uploadRecording()" type="button">Send </button>
+                </div><br />
+                <div class="col-md-6">
+                    <button class="btn btn-lg btn-primary btn-block" onclick="trainData()" type="button">Train</button>
+                </div>
+            </div><br/>
+            <div class="row">
+                <div class="col-md-12">
+                    <button title="click to start Recognise" class="btn btn-lg btn-primary btn-block" onclick="location.href = './startRecognising';" type="button">Start Capturing</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<style type="text/css">
+video {
+    background: #222;
+    margin: 0 0 20px 0;
+    --width: 50%;
+    width: var(--width);
+    /*height: calc(var(--width) * 0.25);*/
+}
+</style>
